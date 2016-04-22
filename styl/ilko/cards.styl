@@ -1,0 +1,46 @@
+.flip-container
+	perspective 1000
+	width 50%
+	height 25%
+	float left
+	border 2px solid #231F20
+
+	&.active,
+	&.matched
+		.flipper
+			transform rotateY(180deg)
+
+
+.flipper
+	transition .7s
+	transform-style preserve-3d
+	position relative
+	width 100%
+	height 100%
+	z-index 5
+
+
+.front,
+.back
+	backface-visibility hidden
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+
+
+.front
+	z-index 7
+	transform rotateY(0deg)
+	background-color rojo
+	background-image url("../img/logo-mediano.png")
+	background-position center center
+	background-repeat no-repeat
+	
+
+.back
+	transform rotateY(180deg)
+	background-color white
+	background-position center center
+	background-repeat no-repeat
